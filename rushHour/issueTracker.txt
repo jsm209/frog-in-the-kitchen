@@ -1,0 +1,10 @@
+Current issues:
+- Progress is not saved when moving back from story view to the title and then back into the game. Solve this with the cache
+
+
+want to add:
+- overall goal of getting more frogs into the kitchen
+- loss condition (like 3 lives or something)
+- some concept of progression (stats to modify rolls, so basic ones can be STR, AGI, and INT).
+- or maybe stats like (SKI/skill, INT/intelligence, VIG/vigor) where skill concerns physical prowess/agility, inteligence is your mental capacity and fortitude, and vigor is your physical resistence and fortitude.
+- help screen to explain mechanics, or some question mark at the top right to explain the game

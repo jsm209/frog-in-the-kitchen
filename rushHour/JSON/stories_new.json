@@ -1,0 +1,55 @@
+{
+    "stories": [
+        {
+            "storyId": 0,
+            "beats": [
+                {
+                    "title": "Get a snack",
+                    "content": "You decide to go to the fridge to get a snack. Unfortunately you woke up after midnight feeling a little peckish.",
+                },
+                {
+                    "title": "Eat a snack",
+                    "content": "You decide to reach in to take a bite of something. In your barren fridge all you see is an apple or some 4 day old pasta.",
+                    "prompt": "Take a bite of the apple or 4 day old pasta?",
+                    "choices": [
+                        {
+                            "title": "Bite the apple.",
+                            "results": [
+                                    {
+                                        "minCheck": 10,
+                                        "title": "You passed",
+                                        "storyId": 1
+                                    },
+                                    {
+                                        "minCheck": 1,
+                                        "title": "You failed",
+                                        "storyId": 1
+                                    }
+                            ]
+                        },
+                        {
+                            "title": "Chomp the 4 day old pasta.",
+                            "results": [
+                                    {
+                                        "minCheck": 10,
+                                        "title": "You passed",
+                                        "storyId": 1
+                                    },
+                                    {
+                                        "minCheck": 1,
+                                        "title": "You failed",
+                                        "storyId": 1
+                                    }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+// instead of picking a choice and going to a specific storyId,
+// now each choice has a chance to fail and a minimum check required to pass. the results can lead to different stories.
+// to emulate the earlier behavior, we can have a single result with a minCheck of 1 meaning it will always pass (assuming no negative modifiers)
+// if the results array is only a size of 1 then we should also assume we automatically pass this roll because there are no other possible results. We should skip the dice roll UI in this case.
+// depending on the roll, the result that is picked is the highest possible result for the roll. for example, if the results included checks for 1, 10, and 15, if I rolled a 12 the highest possible result for me is 10 check. however if I rolled a 4 the highest possible result is the 1 check.
