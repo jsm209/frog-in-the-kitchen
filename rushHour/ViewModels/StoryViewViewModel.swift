@@ -25,7 +25,7 @@ class StoryViewViewModel: ObservableObject {
     var currentStoryBeatIndex: Int = 0
     
     // Alert related
-    var selectedStoryChoice: Int = 0
+    var selectedStoryChoiceResultStoryId: Int = 0
     @Published var showAlert: Bool = false
     @Published var showAlertTitle: String = ""
     
@@ -91,5 +91,52 @@ class StoryViewViewModel: ObservableObject {
     func displayResultAlert(title: String) {
         self.showAlert = true
         self.showAlertTitle = title
+    }
+    
+    
+    // Given the possible results, will dice roll a result for the player and select the highest possible result.
+    // Assumes that results with higher minChecks are "better".
+    // Assumes that the choiceResults are not empty.
+    // If choiceResults only has one item, will default to that item and skip the dice roll.
+    func getResultMessage(choiceResults: [StoryBeatChoiceResultCheck]?) -> String {
+        guard let choiceResults else {
+            return Constants.Labels.defaultResultMessage
+        }
+        if choiceResults.count == 1 {
+            return choiceResults.first?.message ?? Constants.Labels.defaultResultMessage
+        } else {
+            var highestResult: StoryBeatChoiceResultCheck?
+            let roll = doPlayerRoll()
+            for result in choiceResults {
+    
+                // if the roll is high enough for the result
+                if roll >= result.minCheck {
+                    // check to make sure it is a better result before replacing it
+                    if let validHighestResult = highestResult {
+                        if result.minCheck > validHighestResult.minCheck {
+                            highestResult = result
+                        }
+                    } else {
+                        // if this is the first valid result it automatically is the highest
+                        highestResult = result
+                    }
+                }
+            }
+            // TODO: write this in a better way instead of all these optionals
+            selectedStoryChoiceResultStoryId = highestResult?.storyId ?? 0
+            return highestResult?.message ?? Constants.Labels.defaultResultMessage
+        }
+    }
+    
+    
+    // TODO: Make this function do two things, calculate the roll and determine the result, and update the result message and choice ID isntead of doing it all in getResultMessage
+    // When a story choice is tapped, it should be sele
+    func onStoryChoiceTap() {
+        
+    }
+    
+    // Rolls a 20 sided dice on a player's stat, returning a result plus or minus a modifier.
+    func doPlayerRoll() -> Int {
+        return 10
     }
 }

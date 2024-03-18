@@ -38,8 +38,7 @@ struct StoryView: View {
                         Text(viewModel.currentStoryBeat?.prompt ?? "")
                         ForEach(currentStoryBeatChoices, id: \.self) { choice in
                             StorybeatChoiceButtonView(title: choice.title) {
-                                viewModel.displayResultAlert(title: choice.result)
-                                viewModel.selectedStoryChoice = choice.storyId
+                                viewModel.displayResultAlert(title: viewModel.getResultMessage(choiceResults: choice.results))
                             }
                         }
                     } else {
@@ -61,7 +60,7 @@ struct StoryView: View {
                     )
                 ) {
                     viewModel.showAlert = false
-                    viewModel.nextStory(id: viewModel.selectedStoryChoice)
+                    viewModel.nextStory(id: viewModel.selectedStoryChoiceResultStoryId)
                 }
             }
         }

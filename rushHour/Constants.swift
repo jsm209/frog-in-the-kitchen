@@ -25,6 +25,8 @@ struct Constants {
             static let progressResetDefaultFailure = "Could not reset your progress, please try again later."
             static let progressResetNoProgressFailure = "Could not reset your progress because there is no progress to reset."
         }
+        
+        static let defaultResultMessage = "There are no results for this choice..."
     }
     
 }

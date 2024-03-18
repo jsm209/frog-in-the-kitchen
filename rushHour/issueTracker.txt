@@ -8,3 +8,11 @@ want to add:
 - some concept of progression (stats to modify rolls, so basic ones can be STR, AGI, and INT).
 - or maybe stats like (SKI/skill, INT/intelligence, VIG/vigor) where skill concerns physical prowess/agility, inteligence is your mental capacity and fortitude, and vigor is your physical resistence and fortitude.
 - help screen to explain mechanics, or some question mark at the top right to explain the game
+
+
+
+// instead of picking a choice and going to a specific storyId,
+// now each choice has a chance to fail and a minimum check required to pass. the results can lead to different stories.
+// to emulate the earlier behavior, we can have a single result with a minCheck of 1 meaning it will always pass (assuming no negative modifiers)
+// if the results array is only a size of 1 then we should also assume we automatically pass this roll because there are no other possible results. We should skip the dice roll UI in this case.
+// depending on the roll, the result that is picked is the highest possible result for the roll. for example, if the results included checks for 1, 10, and 15, if I rolled a 12 the highest possible result for me is 10 check. however if I rolled a 4 the highest possible result is the 1 check.
