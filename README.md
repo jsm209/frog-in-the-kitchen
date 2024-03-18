@@ -1,5 +1,5 @@
 # frog-in-the-kitchen
-A silly text based interactive story fiction game about being a frog surviving in a restaurant kitchen in Paris. 
+A SwiftUI MVVM iOS game featuring a text based interactive fictional story about being a frog surviving in a restaurant kitchen in Paris. Uses Swift/SwiftUI, MVVM architecture, and best practices from accessibility design to dependency injection.
 
 ## Technical Summary
 - Uses Swift/SwiftUI, features custom UI components like buttons, modals, user input, and animations from scratch without third party libraries.
