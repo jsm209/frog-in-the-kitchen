@@ -102,8 +102,9 @@ class StoryViewViewModel: ObservableObject {
         guard let choiceResults else {
             return Constants.Labels.defaultResultMessage
         }
+        var finalResult: StoryBeatChoiceResultCheck?
         if choiceResults.count == 1 {
-            return choiceResults.first?.message ?? Constants.Labels.defaultResultMessage
+            finalResult = choiceResults.first
         } else {
             var highestResult: StoryBeatChoiceResultCheck?
             let roll = doPlayerRoll()
@@ -122,10 +123,10 @@ class StoryViewViewModel: ObservableObject {
                     }
                 }
             }
-            // TODO: write this in a better way instead of all these optionals
-            selectedStoryChoiceResultStoryId = highestResult?.storyId ?? 0
-            return highestResult?.message ?? Constants.Labels.defaultResultMessage
+            finalResult =  highestResult
         }
+        selectedStoryChoiceResultStoryId = finalResult?.storyId ?? 0
+        return finalResult?.message ?? Constants.Labels.defaultResultMessage
     }
     
     

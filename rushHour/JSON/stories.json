@@ -17,13 +17,13 @@
                             "results": [
                                     {
                                         "minCheck": 10,
-                                        "message": "You passed",
+                                        "message": "Ahh I see {name}, you like playing things rather safe don't you? ... We'll see about that.",
                                         "storyId": 1
                                     },
                                     {
                                         "minCheck": 1,
-                                        "message": "You failed",
-                                        "storyId": 1
+                                        "message": "Ugh {name}, you're so bad at life that you choke on the apple and DIE.",
+                                        "storyId": 2
                                     }
                             ]
                         },
@@ -31,17 +31,88 @@
                             "title": "Chomp the 4 day old pasta.",
                             "results": [
                                     {
-                                        "minCheck": 10,
-                                        "message": "You passed",
-                                        "storyId": 1
-                                    },
-                                    {
-                                        "minCheck": 1,
-                                        "message": "You failed",
-                                        "storyId": 1
+                                        "minCheck": 20,
+                                        "message": "Amazing choice {name}, I just hope this isn't how you actually are in real life.",
+                                        "storyId": 2
                                     }
                             ]
                         }
+                    ]
+                }
+            ]
+        },
+        {
+            "storyId": 1,
+            "beats": [
+                {
+                    "title": "Frawg Daze",
+                    "content": "Turns out the snack you ate earlier had some magical properties. Looks like you're a lil frawgy now. You feel cold tile flooring under your cheeky tiny frawg hands."
+                },
+                {
+                    "title": "Living the frawg life",
+                    "content": "Contemplating life, you realize there's only one way out of this.",
+                    "prompt": "Yak the yucky snack or kill yourself?",
+                    "choices": [
+                            {
+                                "title": "Attempt to make yourself yak to get rid of the snack you ate.",
+                                "storyId": 0,
+                                "results": [
+                                    {
+                                        "minCheck": 20,
+                                        "message": "Ew wait {name}, what are you doin- STOP DON'T CHOKE YOURSELF OUT ON YOUR OWN TONGUE! ... too late, made a mess. Luckily you're no longer a frawg but now you're quite hungy.",
+                                        "storyId": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Commit frawgy seppuku (suicide) :(",
+                                "storyId": 2,
+                                "results": [
+                                        {
+                                            "minCheck": 20,
+                                            "message": "You're very honorable {name}, the most honorable lil frawgy to ever live. ... Sweet dreams.",
+                                            "storyId": 2
+                                        }
+                                ]
+                            }
+                    ]
+                }
+            ]
+        },
+        {
+            "storyId": 2,
+            "beats": [
+                {
+                    "title": "Death In The Kitchen",
+                    "content": "After you put yourself through a rather painful process you find yourself lying lifeless on the kitchen floor. Suddenly, you see a bright flash!"
+                },
+                {
+                    "title": "Afterlife Room 001",
+                    "content": "Welcome to afterlife room 001. You look around and notice the floor has a checkered pattern. It reminds you of the waiting room at the dentist's office, except there's no dentist and you actually don't have teeth either. You're just a ghost because you've managed to somehow kill yourself you dumbass.  There isn't really much going on here besides some more food out that you can eat. You know, just in case you haven't learned your lesson yet.",
+                    "prompt": "What should I feed my ghostly body?",
+                    "choices": [
+                            {
+                                "title": "Check the fridge",
+                                "storyId": 0,
+                                "results": [
+                                        {
+                                            "minCheck": 20,
+                                            "message": "You're very cute {name}, you know that? Just a little ghosty boi floating over to the fridge.",
+                                            "storyId": 1
+                                        }
+                                ]
+                            },
+                            {
+                                "title": "Slurp the poi that was left out",
+                                "storyId": 1,
+                                "results": [
+                                        {
+                                           "minCheck": 20,
+                                           "message": "Hey {name} I bet you didn't even know what poi was or how to eat it. Anyways you slurp down the taro paste immediately without second thought.",
+                                           "storyId": 2
+                                        }
+                                ]
+                            }
                     ]
                 }
             ]

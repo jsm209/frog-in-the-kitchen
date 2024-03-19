@@ -16,3 +16,8 @@ want to add:
 // to emulate the earlier behavior, we can have a single result with a minCheck of 1 meaning it will always pass (assuming no negative modifiers)
 // if the results array is only a size of 1 then we should also assume we automatically pass this roll because there are no other possible results. We should skip the dice roll UI in this case.
 // depending on the roll, the result that is picked is the highest possible result for the roll. for example, if the results included checks for 1, 10, and 15, if I rolled a 12 the highest possible result for me is 10 check. however if I rolled a 4 the highest possible result is the 1 check.
+
+
+other considerations
+
+a PlayerInfoService to track the current stats of a player and also to perform player actions like a roll. it can inject the 
