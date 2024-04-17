@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift */; };
+		3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3256B8BA2BD07C740012581A /* PlayerStatView.swift */; };
 		32D3A9572B682E8C000B1FFA /* rushHourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9562B682E8C000B1FFA /* rushHourApp.swift */; };
 		32D3A9592B682E8C000B1FFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9582B682E8C000B1FFA /* ContentView.swift */; };
 		32D3A95B2B682E8E000B1FFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A95A2B682E8E000B1FFA /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeatChoiceResultCheck.swift; sourceTree = "<group>"; };
+		3256B8BA2BD07C740012581A /* PlayerStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatView.swift; sourceTree = "<group>"; };
 		32D3A9532B682E8C000B1FFA /* rushHour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rushHour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A9562B682E8C000B1FFA /* rushHourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rushHourApp.swift; sourceTree = "<group>"; };
 		32D3A9582B682E8C000B1FFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				32D3A98C2B6D9169000B1FFA /* NameEntryView.swift */,
 				32D3A99C2B71A8A3000B1FFA /* NavigationLinkButtonView.swift */,
 				32D3A9A02B72E923000B1FFA /* ChoiceAlertView.swift */,
+				3256B8BA2BD07C740012581A /* PlayerStatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				32D3A9722B698852000B1FFA /* Stories.swift in Sources */,
 				32D3A97F2B6997D0000B1FFA /* StoryViewViewModel.swift in Sources */,
 				32D3A9742B6988B3000B1FFA /* Story.swift in Sources */,
+				3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */,
 				32D3A9832B6B0EF8000B1FFA /* ImageLoaderService.swift in Sources */,
 				32D3A9892B6D7FEC000B1FFA /* TitleScreenView.swift in Sources */,
 				32D3A9812B69AF2E000B1FFA /* ResultAlertView.swift in Sources */,

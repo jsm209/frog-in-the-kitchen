@@ -1,3 +1,7 @@
+4/17/2024
+- added stats to the game like the player health, total frogs, and 3 basic stat mods (SKI, INT, VIG).
+- I still need to add a way for the story structure to add to these as part of a choices' rewards, and it should be optional because not every choice needs to affect the player's numbers.
+
 Current issues:
 - Progress is not saved when moving back from story view to the title and then back into the game. Solve this with the cache
 
