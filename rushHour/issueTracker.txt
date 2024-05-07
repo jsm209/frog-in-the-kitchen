@@ -1,3 +1,12 @@
+5/7/2024
+- added data persistence for the stats so that they are read from the JSON, saved and cached to the playerInfo, and read out again later when opening the game again or going to a new screen.
+- I still need to add some win/loss conditions based on the stats changing
+- I also need to add a way to assign a skill for the minCheck of a particular story choice result, and then actually use my dice service + player skill mod to do the check.
+
+4/17/2024
+- added stats to the game like the player health, total frogs, and 3 basic stat mods (SKI, INT, VIG).
+- I still need to add a way for the story structure to add to these as part of a choices' rewards, and it should be optional because not every choice needs to affect the player's numbers.
+
 Current issues:
 - Progress is not saved when moving back from story view to the title and then back into the game. Solve this with the cache
 
@@ -8,3 +17,16 @@ want to add:
 - some concept of progression (stats to modify rolls, so basic ones can be STR, AGI, and INT).
 - or maybe stats like (SKI/skill, INT/intelligence, VIG/vigor) where skill concerns physical prowess/agility, inteligence is your mental capacity and fortitude, and vigor is your physical resistence and fortitude.
 - help screen to explain mechanics, or some question mark at the top right to explain the game
+
+
+
+// instead of picking a choice and going to a specific storyId,
+// now each choice has a chance to fail and a minimum check required to pass. the results can lead to different stories.
+// to emulate the earlier behavior, we can have a single result with a minCheck of 1 meaning it will always pass (assuming no negative modifiers)
+// if the results array is only a size of 1 then we should also assume we automatically pass this roll because there are no other possible results. We should skip the dice roll UI in this case.
+// depending on the roll, the result that is picked is the highest possible result for the roll. for example, if the results included checks for 1, 10, and 15, if I rolled a 12 the highest possible result for me is 10 check. however if I rolled a 4 the highest possible result is the 1 check.
+
+
+other considerations
+
+a PlayerInfoService to track the current stats of a player and also to perform player actions like a roll. it can inject the 

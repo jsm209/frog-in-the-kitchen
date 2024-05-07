@@ -15,6 +15,11 @@ struct Constants {
     static let defaultStoryId = 0
     static let defaultStoryBeatIndex = 0
     static let defaultPlayerName = "Frawg"
+    static let defaultPlayerHealth = 3
+    static let defaultPlayerFrogs = 0
+    static let defaultPlayerSkiMod = 0
+    static let defaultPlayerIntMod = 0
+    static let defaultPlayerVigMod = 0
     
     struct Labels {
         static let continueButtonTitle = "Continue"
@@ -25,6 +30,13 @@ struct Constants {
             static let progressResetDefaultFailure = "Could not reset your progress, please try again later."
             static let progressResetNoProgressFailure = "Could not reset your progress because there is no progress to reset."
         }
+        
+        static let defaultResultMessage = "There are no results for this choice..."
+    }
+    
+    struct ErrorMessages {
+        static let failedToLoadPlayerData = "Error: The player data could not be loaded properly. Please quit and restart the game."
+        static let failedToSavePlayerData = "Error: The player data could not be saved properly. Please quit and restart the game."
     }
     
 }

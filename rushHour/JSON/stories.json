@@ -12,16 +12,36 @@
                     "content": "You decide to reach in to take a bite of something. In your barren fridge all you see is an apple or some 4 day old pasta.",
                     "prompt": "Take a bite of the apple or 4 day old pasta?",
                     "choices": [
-                            {
-                                "title": "Bite the apple.",
-                                "storyId": 1,
-                                "result": "Ahh I see {name}, you like playing things rather safe don't you? ... We'll see about that."
-                            },
-                            {
-                                "title": "Chomp the 4 day old pasta.",
-                                "storyId": 2,
-                                "result": "Amazing choice {name}, I just hope this isn't how you actually are in real life."
-                            }
+                        {
+                            "title": "Bite the apple.",
+                            "results": [
+                                    {
+                                        "minCheck": 10,
+                                        "message": "Ahh I see {name}, you like playing things rather safe don't you? ... We'll see about that.",
+                                        "frogsChange": 1,
+                                        "healthChange": -1,
+                                        "skiChange": -1,
+                                        "intChange": -1,
+                                        "vigChange": -1,
+                                        "storyId": 1
+                                    },
+                                    {
+                                        "minCheck": 1,
+                                        "message": "Ugh {name}, you're so bad at life that you choke on the apple and DIE.",
+                                        "storyId": 2
+                                    }
+                            ]
+                        },
+                        {
+                            "title": "Chomp the 4 day old pasta.",
+                            "results": [
+                                    {
+                                        "minCheck": 20,
+                                        "message": "Amazing choice {name}, I just hope this isn't how you actually are in real life.",
+                                        "storyId": 2
+                                    }
+                            ]
+                        }
                     ]
                 }
             ]
@@ -41,12 +61,24 @@
                             {
                                 "title": "Attempt to make yourself yak to get rid of the snack you ate.",
                                 "storyId": 0,
-                                "result": "Ew wait {name}, what are you doin- STOP DON'T CHOKE YOURSELF OUT ON YOUR OWN TONGUE! ... too late, made a mess. Luckily you're no longer a frawg but now you're quite hungy."
+                                "results": [
+                                    {
+                                        "minCheck": 20,
+                                        "message": "Ew wait {name}, what are you doin- STOP DON'T CHOKE YOURSELF OUT ON YOUR OWN TONGUE! ... too late, made a mess. Luckily you're no longer a frawg but now you're quite hungy.",
+                                        "storyId": 0
+                                    }
+                                ]
                             },
                             {
                                 "title": "Commit frawgy seppuku (suicide) :(",
                                 "storyId": 2,
-                                "result": "You're very honorable {name}, the most honorable lil frawgy to ever live. ... Sweet dreams."
+                                "results": [
+                                        {
+                                            "minCheck": 20,
+                                            "message": "You're very honorable {name}, the most honorable lil frawgy to ever live. ... Sweet dreams.",
+                                            "storyId": 2
+                                        }
+                                ]
                             }
                     ]
                 }
@@ -67,12 +99,24 @@
                             {
                                 "title": "Check the fridge",
                                 "storyId": 0,
-                                "result": "You're very cute {name}, you know that? Just a little ghosty boi floating over to the fridge."
+                                "results": [
+                                        {
+                                            "minCheck": 20,
+                                            "message": "You're very cute {name}, you know that? Just a little ghosty boi floating over to the fridge.",
+                                            "storyId": 1
+                                        }
+                                ]
                             },
                             {
                                 "title": "Slurp the poi that was left out",
                                 "storyId": 1,
-                                "result": "Hey {name} I bet you didn't even know what poi was or how to eat it. Anyways you slurp down the taro paste immediately without second thought."
+                                "results": [
+                                        {
+                                           "minCheck": 20,
+                                           "message": "Hey {name} I bet you didn't even know what poi was or how to eat it. Anyways you slurp down the taro paste immediately without second thought.",
+                                           "storyId": 2
+                                        }
+                                ]
                             }
                     ]
                 }

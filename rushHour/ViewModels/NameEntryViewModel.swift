@@ -31,7 +31,12 @@ class NameEntryViewModel: ObservableObject {
         var validCurrentPlayerInfo = getExistingPlayerInfo() ?? PlayerInfo(
             name: "",
             currentStoryId: Constants.defaultStoryId,
-            currentStoryBeatIndex: Constants.defaultStoryBeatIndex
+            currentStoryBeatIndex: Constants.defaultStoryBeatIndex,
+            frogs: Constants.defaultPlayerFrogs,
+            health: Constants.defaultPlayerHealth,
+            skiMod: Constants.defaultPlayerSkiMod,
+            intMod: Constants.defaultPlayerIntMod,
+            vigMod: Constants.defaultPlayerVigMod
         )
         
         // Set the new name in either case that the old playerInfo existed or not

@@ -27,6 +27,7 @@ class GameDataStorageService: ObservableObject, GameDataStorageServiceProtocol {
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     let cache = PlayerInfoCacheService()
+    var currentPlayerInfo: PlayerInfo?
     
     private func getFileURL() throws -> URL {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -58,17 +59,26 @@ class GameDataStorageService: ObservableObject, GameDataStorageServiceProtocol {
             
             // successfully saved to file, so update the cache
             try cache.cachePlayerInfo(info: info)
+            currentPlayerInfo = info
         } catch {
             throw GameDataStorageServiceErrors.failedToEncodeData
         }
     }
     
     func loadPlayerInfo() throws -> PlayerInfo? {
+        if let existingPlayerInfo = cache.getPlayerInfo() {
+            return existingPlayerInfo
+        }
+
         do {
             let fileURL = try getFileURL()
             if FileManager.default.fileExists(atPath: fileURL.path) {
                 let storedResponse = try Data(contentsOf: fileURL)
                 let collection = try decoder.decode(PlayerInfo.self, from: storedResponse)
+                currentPlayerInfo = collection
+                
+                // successfully loaded this player info, so update the cache to avoid this work later.
+                try cache.cachePlayerInfo(info: collection)
                 return collection
             }
         } catch {

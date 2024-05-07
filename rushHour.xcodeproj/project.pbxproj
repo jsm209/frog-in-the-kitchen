@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */; };
+		3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3256B8BA2BD07C740012581A /* PlayerStatView.swift */; };
 		32D3A9572B682E8C000B1FFA /* rushHourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9562B682E8C000B1FFA /* rushHourApp.swift */; };
 		32D3A9592B682E8C000B1FFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9582B682E8C000B1FFA /* ContentView.swift */; };
 		32D3A95B2B682E8E000B1FFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A95A2B682E8E000B1FFA /* Assets.xcassets */; };
 		32D3A95E2B682E8E000B1FFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A95D2B682E8E000B1FFA /* Preview Assets.xcassets */; };
 		32D3A9662B682FEF000B1FFA /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9652B682FEF000B1FFA /* StoryView.swift */; };
 		32D3A9682B68304D000B1FFA /* StorybeatChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9672B68304D000B1FFA /* StorybeatChoiceButtonView.swift */; };
-		32D3A96F2B683318000B1FFA /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A96E2B683318000B1FFA /* stories.json */; };
+		32D3A96F2B683318000B1FFA /* stories_old.json in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A96E2B683318000B1FFA /* stories_old.json */; };
 		32D3A9722B698852000B1FFA /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9712B698852000B1FFA /* Stories.swift */; };
 		32D3A9742B6988B3000B1FFA /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9732B6988B3000B1FFA /* Story.swift */; };
 		32D3A9762B69897A000B1FFA /* StoryBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9752B69897A000B1FFA /* StoryBeat.swift */; };
@@ -40,10 +42,12 @@
 		32D3A9A12B72E923000B1FFA /* ChoiceAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9A02B72E923000B1FFA /* ChoiceAlertView.swift */; };
 		32D3A9A32B72EAE5000B1FFA /* OptionsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9A22B72EAE5000B1FFA /* OptionsScreenViewModel.swift */; };
 		32D3A9A52B7444B0000B1FFA /* DiceRollService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9A42B7444B0000B1FFA /* DiceRollService.swift */; };
-		32D3A9A72B7445D7000B1FFA /* stories_new.json in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A9A62B7445D7000B1FFA /* stories_new.json */; };
+		32D3A9A72B7445D7000B1FFA /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A9A62B7445D7000B1FFA /* stories.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeatChoiceResult.swift; sourceTree = "<group>"; };
+		3256B8BA2BD07C740012581A /* PlayerStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatView.swift; sourceTree = "<group>"; };
 		32D3A9532B682E8C000B1FFA /* rushHour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rushHour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A9562B682E8C000B1FFA /* rushHourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rushHourApp.swift; sourceTree = "<group>"; };
 		32D3A9582B682E8C000B1FFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +55,7 @@
 		32D3A95D2B682E8E000B1FFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32D3A9652B682FEF000B1FFA /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		32D3A9672B68304D000B1FFA /* StorybeatChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybeatChoiceButtonView.swift; sourceTree = "<group>"; };
-		32D3A96E2B683318000B1FFA /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
+		32D3A96E2B683318000B1FFA /* stories_old.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories_old.json; sourceTree = "<group>"; };
 		32D3A9712B698852000B1FFA /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
 		32D3A9732B6988B3000B1FFA /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		32D3A9752B69897A000B1FFA /* StoryBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeat.swift; sourceTree = "<group>"; };
@@ -78,7 +82,7 @@
 		32D3A9A02B72E923000B1FFA /* ChoiceAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceAlertView.swift; sourceTree = "<group>"; };
 		32D3A9A22B72EAE5000B1FFA /* OptionsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreenViewModel.swift; sourceTree = "<group>"; };
 		32D3A9A42B7444B0000B1FFA /* DiceRollService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollService.swift; sourceTree = "<group>"; };
-		32D3A9A62B7445D7000B1FFA /* stories_new.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories_new.json; sourceTree = "<group>"; };
+		32D3A9A62B7445D7000B1FFA /* stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				32D3A98C2B6D9169000B1FFA /* NameEntryView.swift */,
 				32D3A99C2B71A8A3000B1FFA /* NavigationLinkButtonView.swift */,
 				32D3A9A02B72E923000B1FFA /* ChoiceAlertView.swift */,
+				3256B8BA2BD07C740012581A /* PlayerStatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,8 +183,8 @@
 		32D3A96B2B683285000B1FFA /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				32D3A96E2B683318000B1FFA /* stories.json */,
-				32D3A9A62B7445D7000B1FFA /* stories_new.json */,
+				32D3A96E2B683318000B1FFA /* stories_old.json */,
+				32D3A9A62B7445D7000B1FFA /* stories.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				32D3A9772B6989B8000B1FFA /* StoryBeatChoice.swift */,
 				32D3A98E2B6D9255000B1FFA /* Screens.swift */,
 				32D3A9942B6D9D6E000B1FFA /* PlayerInfo.swift */,
+				3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,8 +271,8 @@
 			files = (
 				32D3A95E2B682E8E000B1FFA /* Preview Assets.xcassets in Resources */,
 				32D3A95B2B682E8E000B1FFA /* Assets.xcassets in Resources */,
-				32D3A96F2B683318000B1FFA /* stories.json in Resources */,
-				32D3A9A72B7445D7000B1FFA /* stories_new.json in Resources */,
+				32D3A96F2B683318000B1FFA /* stories_old.json in Resources */,
+				32D3A9A72B7445D7000B1FFA /* stories.json in Resources */,
 				32D3A9992B6DA2E1000B1FFA /* issueTracker.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift in Sources */,
 				32D3A9782B6989B8000B1FFA /* StoryBeatChoice.swift in Sources */,
 				32D3A9932B6D9B3C000B1FFA /* PlayerInfoCacheService.swift in Sources */,
 				32D3A9762B69897A000B1FFA /* StoryBeat.swift in Sources */,
@@ -300,6 +307,7 @@
 				32D3A9722B698852000B1FFA /* Stories.swift in Sources */,
 				32D3A97F2B6997D0000B1FFA /* StoryViewViewModel.swift in Sources */,
 				32D3A9742B6988B3000B1FFA /* Story.swift in Sources */,
+				3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */,
 				32D3A9832B6B0EF8000B1FFA /* ImageLoaderService.swift in Sources */,
 				32D3A9892B6D7FEC000B1FFA /* TitleScreenView.swift in Sources */,
 				32D3A9812B69AF2E000B1FFA /* ResultAlertView.swift in Sources */,

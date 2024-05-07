@@ -28,6 +28,7 @@ class StoryLoaderMockService: StoryLoaderProtocol {
             let decodedData = try decoder.decode(Stories.self, from: data)
             return decodedData
         } catch {
+            // TODO: When this error occurs, needs to be handled more gracefully by showing a message to the user
             throw StoryLoaderServiceErrors.decodingError
         }
     }

@@ -19,6 +19,18 @@ struct StoryView: View {
                 StorybeatChoiceButtonView(title: "Back To Title") {
                     pathManager.emptyPath()
                 }
+                VStack {
+                    HStack {
+                        PlayerStatView(label: "Name", value: viewModel.playerInfo?.name ?? "")
+                        PlayerStatView(label: "HP", value: "\(viewModel.playerInfo?.health ?? 0)")
+                    }
+                    PlayerStatView(label: "Frogs in the kitchen", value: "\(viewModel.playerInfo?.frogs ?? 0)")
+                    HStack {
+                        PlayerStatView(label: "SKI", value: "\(viewModel.playerInfo?.skiMod ?? 0)")
+                        PlayerStatView(label: "INT", value: "\(viewModel.playerInfo?.intMod ?? 0)")
+                        PlayerStatView(label: "VIG", value: "\(viewModel.playerInfo?.vigMod ?? 0)")
+                    }
+                }
                 HStack {
                     VStack(alignment: .leading) {
                         Text(viewModel.currentStoryBeat?.title ?? "")
@@ -38,8 +50,7 @@ struct StoryView: View {
                         Text(viewModel.currentStoryBeat?.prompt ?? "")
                         ForEach(currentStoryBeatChoices, id: \.self) { choice in
                             StorybeatChoiceButtonView(title: choice.title) {
-                                viewModel.displayResultAlert(title: choice.result)
-                                viewModel.selectedStoryChoice = choice.storyId
+                                viewModel.onStoryChoiceTap(choiceResults: choice.results)
                             }
                         }
                     } else {
@@ -61,7 +72,7 @@ struct StoryView: View {
                     )
                 ) {
                     viewModel.showAlert = false
-                    viewModel.nextStory(id: viewModel.selectedStoryChoice)
+                    viewModel.nextStory(id: viewModel.selectedStoryChoiceResultStoryId)
                 }
             }
         }
