@@ -1,6 +1,7 @@
 5/7/2024
 - added data persistence for the stats so that they are read from the JSON, saved and cached to the playerInfo, and read out again later when opening the game again or going to a new screen.
 - I still need to add some win/loss conditions based on the stats changing
+- I also need to add a way to assign a skill for the minCheck of a particular story choice result, and then actually use my dice service + player skill mod to do the check.
 
 4/17/2024
 - added stats to the game like the player health, total frogs, and 3 basic stat mods (SKI, INT, VIG).
