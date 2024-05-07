@@ -10,6 +10,7 @@ import Foundation
 struct StoryBeatChoiceResult: Codable, Hashable {
     var minCheck: Int
     var message: String
+    var frogsChange: Int?
     var healthChange: Int?
     var skiChange: Int?
     var intChange: Int?

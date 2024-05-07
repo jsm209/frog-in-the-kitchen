@@ -146,22 +146,26 @@ class StoryViewViewModel: ObservableObject {
         
         // If we already have valid player data, update it with stat changes, if any.
         if var validPlayerInfo = playerInfo {
+            if let validFrogsChange = result.frogsChange {
+                validPlayerInfo.frogs += validFrogsChange
+            }
+
             if let validHealthChange = result.healthChange {
                 validPlayerInfo.health += validHealthChange
             }
-            
+
             if let validSkiChange = result.skiChange {
                 validPlayerInfo.skiMod += validSkiChange
             }
-            
+
             if let validIntChange = result.intChange {
                 validPlayerInfo.intMod += validIntChange
             }
-            
+
             if let validVigChange = result.vigChange {
                 validPlayerInfo.vigMod += validVigChange
             }
-            
+
             do {
                 try gameDataService.savePlayerInfo(info: validPlayerInfo, updateCache: true)
             } catch {
