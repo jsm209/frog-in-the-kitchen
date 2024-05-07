@@ -50,7 +50,7 @@ struct StoryView: View {
                         Text(viewModel.currentStoryBeat?.prompt ?? "")
                         ForEach(currentStoryBeatChoices, id: \.self) { choice in
                             StorybeatChoiceButtonView(title: choice.title) {
-                                viewModel.displayResultAlert(title: viewModel.getResultMessage(choiceResults: choice.results))
+                                viewModel.onStoryChoiceTap(choiceResults: choice.results)
                             }
                         }
                     } else {

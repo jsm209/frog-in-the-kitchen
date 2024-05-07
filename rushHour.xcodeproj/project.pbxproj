@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift */; };
+		3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */; };
 		3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3256B8BA2BD07C740012581A /* PlayerStatView.swift */; };
 		32D3A9572B682E8C000B1FFA /* rushHourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9562B682E8C000B1FFA /* rushHourApp.swift */; };
 		32D3A9592B682E8C000B1FFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9582B682E8C000B1FFA /* ContentView.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeatChoiceResultCheck.swift; sourceTree = "<group>"; };
+		3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeatChoiceResult.swift; sourceTree = "<group>"; };
 		3256B8BA2BD07C740012581A /* PlayerStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatView.swift; sourceTree = "<group>"; };
 		32D3A9532B682E8C000B1FFA /* rushHour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rushHour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A9562B682E8C000B1FFA /* rushHourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rushHourApp.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				32D3A9772B6989B8000B1FFA /* StoryBeatChoice.swift */,
 				32D3A98E2B6D9255000B1FFA /* Screens.swift */,
 				32D3A9942B6D9D6E000B1FFA /* PlayerInfo.swift */,
-				3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift */,
+				3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResultCheck.swift in Sources */,
+				3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift in Sources */,
 				32D3A9782B6989B8000B1FFA /* StoryBeatChoice.swift in Sources */,
 				32D3A9932B6D9B3C000B1FFA /* PlayerInfoCacheService.swift in Sources */,
 				32D3A9762B69897A000B1FFA /* StoryBeat.swift in Sources */,

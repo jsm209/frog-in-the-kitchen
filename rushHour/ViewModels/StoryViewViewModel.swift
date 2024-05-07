@@ -37,12 +37,7 @@ class StoryViewViewModel: ObservableObject {
         Task {
             await loadStories()
         }
-        
-        do {
-            playerInfo = try gameDataService.loadPlayerInfo()
-        } catch {
-            // TODO: Handle error
-        }
+        updatePlayerInfo()
     }
     
     @MainActor
@@ -72,6 +67,7 @@ class StoryViewViewModel: ObservableObject {
     func initializeNextStory() {
         currentStoryBeat = currentStory?.beats.first
         currentStoryBeatIndex = 0
+        updatePlayerInfo()
     }
     
     func nextStoryBeat() {
@@ -88,28 +84,36 @@ class StoryViewViewModel: ObservableObject {
         }
     }
     
-    func displayResultAlert(title: String) {
+    func displayAlert(title: String) {
         self.showAlert = true
         self.showAlertTitle = title
     }
-    
-    
+
+    // TODO: Make the error alert visually distinct from the game story alerts.
+    func displayErrorAlert(title: String) {
+        self.showAlert = true
+        self.showAlertTitle = title
+    }
+
+    // When a story choice is tapped, it should be select that choice and figure out the correct result.
     // Given the possible results, will dice roll a result for the player and select the highest possible result.
     // Assumes that results with higher minChecks are "better".
     // Assumes that the choiceResults are not empty.
     // If choiceResults only has one item, will default to that item and skip the dice roll.
-    func getResultMessage(choiceResults: [StoryBeatChoiceResultCheck]?) -> String {
+    func onStoryChoiceTap(choiceResults: [StoryBeatChoiceResult]?) {
         guard let choiceResults else {
-            return Constants.Labels.defaultResultMessage
+            // This will only occur if the data is malformed.
+            displayAlert(title: Constants.Labels.defaultResultMessage)
+            return
         }
-        var finalResult: StoryBeatChoiceResultCheck?
+        var finalResult: StoryBeatChoiceResult?
         if choiceResults.count == 1 {
             finalResult = choiceResults.first
         } else {
-            var highestResult: StoryBeatChoiceResultCheck?
+            var highestResult: StoryBeatChoiceResult?
             let roll = doPlayerRoll()
             for result in choiceResults {
-    
+                
                 // if the roll is high enough for the result
                 if roll >= result.minCheck {
                     // check to make sure it is a better result before replacing it
@@ -125,17 +129,55 @@ class StoryViewViewModel: ObservableObject {
             }
             finalResult =  highestResult
         }
-        selectedStoryChoiceResultStoryId = finalResult?.storyId ?? 0
-        return finalResult?.message ?? Constants.Labels.defaultResultMessage
+
+        if let validFinalResult = finalResult {
+            processFinalStoryResult(result: validFinalResult)
+        } else {
+            displayAlert(title: Constants.Labels.defaultResultMessage)
+        }
     }
     
-    
-    // TODO: Make this function do two things, calculate the roll and determine the result, and update the result message and choice ID isntead of doing it all in getResultMessage
-    // When a story choice is tapped, it should be sele
-    func onStoryChoiceTap() {
+    // Given a result from making a choice
+    // will update the selected result so the story can continue, display the appropriate alert,
+    // and update any changes to the player data to the cache.
+    func processFinalStoryResult(result: StoryBeatChoiceResult) {
+        selectedStoryChoiceResultStoryId = result.storyId
+        displayAlert(title: result.message)
         
+        // If we already have valid player data, update it with stat changes, if any.
+        if var validPlayerInfo = playerInfo {
+            if let validHealthChange = result.healthChange {
+                validPlayerInfo.health += validHealthChange
+            }
+            
+            if let validSkiChange = result.skiChange {
+                validPlayerInfo.skiMod += validSkiChange
+            }
+            
+            if let validIntChange = result.intChange {
+                validPlayerInfo.intMod += validIntChange
+            }
+            
+            if let validVigChange = result.vigChange {
+                validPlayerInfo.vigMod += validVigChange
+            }
+            
+            do {
+                try gameDataService.savePlayerInfo(info: validPlayerInfo, updateCache: true)
+            } catch {
+                displayErrorAlert(title: Constants.ErrorMessages.failedToSavePlayerData)
+            }
+        }
     }
-    
+
+    func updatePlayerInfo() {
+        do {
+            playerInfo = try gameDataService.loadPlayerInfo()
+        } catch {
+            displayErrorAlert(title: Constants.ErrorMessages.failedToLoadPlayerData)
+        }
+    }
+
     // Rolls a 20 sided dice on a player's stat, returning a result plus or minus a modifier.
     func doPlayerRoll() -> Int {
         return 10

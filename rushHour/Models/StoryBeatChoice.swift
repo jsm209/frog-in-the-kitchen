@@ -9,5 +9,5 @@ import Foundation
 
 struct StoryBeatChoice: Codable, Hashable {
     var title: String
-    var results: [StoryBeatChoiceResultCheck]
+    var results: [StoryBeatChoiceResult]
 }

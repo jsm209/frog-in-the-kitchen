@@ -34,4 +34,9 @@ struct Constants {
         static let defaultResultMessage = "There are no results for this choice..."
     }
     
+    struct ErrorMessages {
+        static let failedToLoadPlayerData = "Error: The player data could not be loaded properly. Please quit and restart the game."
+        static let failedToSavePlayerData = "Error: The player data could not be saved properly. Please quit and restart the game."
+    }
+    
 }

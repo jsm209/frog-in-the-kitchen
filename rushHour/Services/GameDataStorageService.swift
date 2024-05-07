@@ -66,12 +66,19 @@ class GameDataStorageService: ObservableObject, GameDataStorageServiceProtocol {
     }
     
     func loadPlayerInfo() throws -> PlayerInfo? {
+        if let existingPlayerInfo = cache.getPlayerInfo() {
+            return existingPlayerInfo
+        }
+
         do {
             let fileURL = try getFileURL()
             if FileManager.default.fileExists(atPath: fileURL.path) {
                 let storedResponse = try Data(contentsOf: fileURL)
                 let collection = try decoder.decode(PlayerInfo.self, from: storedResponse)
                 currentPlayerInfo = collection
+                
+                // successfully loaded this player info, so update the cache to avoid this work later.
+                try cache.cachePlayerInfo(info: collection)
                 return collection
             }
         } catch {

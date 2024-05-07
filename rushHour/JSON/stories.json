@@ -18,6 +18,10 @@
                                     {
                                         "minCheck": 10,
                                         "message": "Ahh I see {name}, you like playing things rather safe don't you? ... We'll see about that.",
+                                        "healthChange": -1,
+                                        "skiChange": -1,
+                                        "intChange": -1,
+                                        "vigChange": -1,
                                         "storyId": 1
                                     },
                                     {

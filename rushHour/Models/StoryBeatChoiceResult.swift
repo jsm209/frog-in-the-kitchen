@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct StoryBeatChoiceResultCheck: Codable, Hashable {
+struct StoryBeatChoiceResult: Codable, Hashable {
     var minCheck: Int
     var message: String
+    var healthChange: Int?
+    var skiChange: Int?
+    var intChange: Int?
+    var vigChange: Int?
     var storyId: Int
 }
