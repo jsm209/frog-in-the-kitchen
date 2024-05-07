@@ -1,3 +1,7 @@
+5/7/2024
+- added data persistence for the stats so that they are read from the JSON, saved and cached to the playerInfo, and read out again later when opening the game again or going to a new screen.
+- I still need to add some win/loss conditions based on the stats changing
+
 4/17/2024
 - added stats to the game like the player health, total frogs, and 3 basic stat mods (SKI, INT, VIG).
 - I still need to add a way for the story structure to add to these as part of a choices' rewards, and it should be optional because not every choice needs to affect the player's numbers.
