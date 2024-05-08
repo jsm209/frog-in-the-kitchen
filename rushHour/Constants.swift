@@ -21,6 +21,12 @@ struct Constants {
     static let defaultPlayerIntMod = 0
     static let defaultPlayerVigMod = 0
     
+    enum CheckTypes: String {
+        case SKI = "SKI"
+        case INT = "INT"
+        case VIG = "VIG"
+    }
+    
     struct Labels {
         static let continueButtonTitle = "Continue"
         

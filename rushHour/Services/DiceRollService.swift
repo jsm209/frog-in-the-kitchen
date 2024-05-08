@@ -10,7 +10,8 @@ import Foundation
 class DiceRollService: ObservableObject {
 
     func rollDice(sides: Int = 20, mod: Int = 0) -> Int {
-        let roll = Int(arc4random_uniform(20)) + 1 + mod
+        var roll = Int(arc4random_uniform(20)) + 1 + mod
+        roll = max(roll, 1)
         return roll
     }
 

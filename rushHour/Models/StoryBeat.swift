@@ -11,5 +11,6 @@ struct StoryBeat: Codable {
     var title: String
     var content: String
     var prompt: String?
+    var minCheckType: String?
     var choices: [StoryBeatChoice]?
 }

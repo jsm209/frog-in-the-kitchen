@@ -12,6 +12,7 @@ class StoryViewViewModel: ObservableObject {
     // Services
     let storyLoaderService = StoryLoaderMockService()
     let gameDataService = GameDataStorageService()
+    let diceService = DiceRollService()
     
     // All the stories loaded by the service
     @Published var stories: [Story] = []
@@ -111,9 +112,9 @@ class StoryViewViewModel: ObservableObject {
             finalResult = choiceResults.first
         } else {
             var highestResult: StoryBeatChoiceResult?
-            let roll = doPlayerRoll()
+            let roll = calculateRoll(minCheckType: currentStoryBeat?.minCheckType)
+
             for result in choiceResults {
-                
                 // if the roll is high enough for the result
                 if roll >= result.minCheck {
                     // check to make sure it is a better result before replacing it
@@ -181,9 +182,22 @@ class StoryViewViewModel: ObservableObject {
             displayErrorAlert(title: Constants.ErrorMessages.failedToLoadPlayerData)
         }
     }
-
+    
     // Rolls a 20 sided dice on a player's stat, returning a result plus or minus a modifier.
-    func doPlayerRoll() -> Int {
-        return 10
+    // If the minCheckType is missing or not a valid type it will roll a regular 20 sided dice
+    func calculateRoll(minCheckType: String?) -> Int {
+        guard let minCheckType else {
+            return diceService.rollDice()
+        }
+        switch minCheckType {
+        case Constants.CheckTypes.SKI.rawValue:
+            return diceService.rollDice(mod: playerInfo?.skiMod ?? 0)
+        case Constants.CheckTypes.INT.rawValue:
+            return diceService.rollDice(mod: playerInfo?.intMod ?? 0)
+        case Constants.CheckTypes.VIG.rawValue:
+            return diceService.rollDice(mod: playerInfo?.vigMod ?? 0)
+        default:
+            return diceService.rollDice()
+        }
     }
 }

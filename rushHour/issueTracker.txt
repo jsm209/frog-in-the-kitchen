@@ -1,3 +1,7 @@
+- add a "minCheckType" which is a string that can be "SKI", "INT", or "VIG" which will represent the skill that will be checked for the roll.
+- if the minCheckType is missing or invalid (not one of the predefined types, can be defined in the constants as an array of strings), just roll the dice normally without any modifier.
+- The dice animation will be an octagon shape with numbers 1-20 randomly cycling in the middle for a few seconds before changing to the roll we get. then have a brief pause to add a modifier if any by showing the modifier amount and changing the middle roll number at the same time. At any time after the initial roll the player can tap "OK" to just get rid of the dialogue and continue. The dice roll should appear after we tap a choice but before we pick the outcome. This will require some asynchronous animation hijinks.
+
 5/7/2024
 - added data persistence for the stats so that they are read from the JSON, saved and cached to the playerInfo, and read out again later when opening the game again or going to a new screen.
 - I still need to add some win/loss conditions based on the stats changing

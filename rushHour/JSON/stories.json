@@ -11,6 +11,7 @@
                     "title": "Eat a snack",
                     "content": "You decide to reach in to take a bite of something. In your barren fridge all you see is an apple or some 4 day old pasta.",
                     "prompt": "Take a bite of the apple or 4 day old pasta?",
+                    "minCheckType": "SKI",
                     "choices": [
                         {
                             "title": "Bite the apple.",
@@ -57,6 +58,7 @@
                     "title": "Living the frawg life",
                     "content": "Contemplating life, you realize there's only one way out of this.",
                     "prompt": "Yak the yucky snack or kill yourself?",
+                    "minCheckType": "VIG",
                     "choices": [
                             {
                                 "title": "Attempt to make yourself yak to get rid of the snack you ate.",
@@ -95,6 +97,7 @@
                     "title": "Afterlife Room 001",
                     "content": "Welcome to afterlife room 001. You look around and notice the floor has a checkered pattern. It reminds you of the waiting room at the dentist's office, except there's no dentist and you actually don't have teeth either. You're just a ghost because you've managed to somehow kill yourself you dumbass.  There isn't really much going on here besides some more food out that you can eat. You know, just in case you haven't learned your lesson yet.",
                     "prompt": "What should I feed my ghostly body?",
+                    "minCheckType": "INT",
                     "choices": [
                             {
                                 "title": "Check the fridge",
