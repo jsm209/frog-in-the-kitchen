@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3215360C2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */; };
 		3256B8BB2BD07C740012581A /* PlayerStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3256B8BA2BD07C740012581A /* PlayerStatView.swift */; };
+		3282300E2C1A3DB7004CC68E /* DiceRollAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282300D2C1A3DB7004CC68E /* DiceRollAnimationView.swift */; };
+		328230102C1A3E06004CC68E /* DiceRollAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282300F2C1A3E06004CC68E /* DiceRollAnimationViewModel.swift */; };
 		32D3A9572B682E8C000B1FFA /* rushHourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9562B682E8C000B1FFA /* rushHourApp.swift */; };
 		32D3A9592B682E8C000B1FFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A9582B682E8C000B1FFA /* ContentView.swift */; };
 		32D3A95B2B682E8E000B1FFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A95A2B682E8E000B1FFA /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		3215360B2BA8D7400084A4B8 /* StoryBeatChoiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBeatChoiceResult.swift; sourceTree = "<group>"; };
 		3256B8BA2BD07C740012581A /* PlayerStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatView.swift; sourceTree = "<group>"; };
+		3282300D2C1A3DB7004CC68E /* DiceRollAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollAnimationView.swift; sourceTree = "<group>"; };
+		3282300F2C1A3E06004CC68E /* DiceRollAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollAnimationViewModel.swift; sourceTree = "<group>"; };
 		32D3A9532B682E8C000B1FFA /* rushHour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rushHour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A9562B682E8C000B1FFA /* rushHourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rushHourApp.swift; sourceTree = "<group>"; };
 		32D3A9582B682E8C000B1FFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				32D3A99C2B71A8A3000B1FFA /* NavigationLinkButtonView.swift */,
 				32D3A9A02B72E923000B1FFA /* ChoiceAlertView.swift */,
 				3256B8BA2BD07C740012581A /* PlayerStatView.swift */,
+				3282300D2C1A3DB7004CC68E /* DiceRollAnimationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				32D3A9842B6B1310000B1FFA /* AlertViewModel.swift */,
 				32D3A99A2B71A28E000B1FFA /* NameEntryViewModel.swift */,
 				32D3A99E2B72E6D0000B1FFA /* TitleScreenViewModel.swift */,
+				3282300F2C1A3E06004CC68E /* DiceRollAnimationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				32D3A99D2B71A8A3000B1FFA /* NavigationLinkButtonView.swift in Sources */,
 				32D3A98B2B6D80F1000B1FFA /* OptionsScreenView.swift in Sources */,
 				32D3A99B2B71A28E000B1FFA /* NameEntryViewModel.swift in Sources */,
+				328230102C1A3E06004CC68E /* DiceRollAnimationViewModel.swift in Sources */,
 				32D3A9852B6B1310000B1FFA /* AlertViewModel.swift in Sources */,
 				32D3A9572B682E8C000B1FFA /* rushHourApp.swift in Sources */,
 				32D3A9952B6D9D6E000B1FFA /* PlayerInfo.swift in Sources */,
@@ -315,6 +322,7 @@
 				32D3A98D2B6D9169000B1FFA /* NameEntryView.swift in Sources */,
 				32D3A9972B6D9F74000B1FFA /* GameDataStorageService.swift in Sources */,
 				32D3A97A2B698A45000B1FFA /* StoryLoaderMockService.swift in Sources */,
+				3282300E2C1A3DB7004CC68E /* DiceRollAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,6 +75,11 @@ struct StoryView: View {
                     viewModel.nextStory(id: viewModel.selectedStoryChoiceResultStoryId)
                 }
             }
+            if viewModel.showDiceRollAlert {
+                DiceRollAnimationView(
+                    viewModel: viewModel.diceRollAnimationViewModel
+                )
+            }
         }
         .navigationBarBackButtonHidden(true)
     }

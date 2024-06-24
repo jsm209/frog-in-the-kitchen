@@ -30,6 +30,9 @@ class StoryViewViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var showAlertTitle: String = ""
     
+    @Published var showDiceRollAlert: Bool = false
+    @Published var diceRollAnimationViewModel: DiceRollAnimationViewModel = DiceRollAnimationViewModel(finalResult: 0)
+    
     // Player related
     @Published var playerInfo: PlayerInfo?
 
@@ -186,18 +189,36 @@ class StoryViewViewModel: ObservableObject {
     // Rolls a 20 sided dice on a player's stat, returning a result plus or minus a modifier.
     // If the minCheckType is missing or not a valid type it will roll a regular 20 sided dice
     func calculateRoll(minCheckType: String?) -> Int {
+        var rollResult = diceService.rollDice()
+
         guard let minCheckType else {
-            return diceService.rollDice()
+            showDiceRollAnimation(finalResult: rollResult)
+            return rollResult
         }
         switch minCheckType {
         case Constants.CheckTypes.SKI.rawValue:
-            return diceService.rollDice(mod: playerInfo?.skiMod ?? 0)
+            rollResult = diceService.rollDice(mod: playerInfo?.skiMod ?? 0)
+            showDiceRollAnimation(finalResult: rollResult, modifer: playerInfo?.skiMod ?? 0, checkType: .SKI)
+            return rollResult
         case Constants.CheckTypes.INT.rawValue:
-            return diceService.rollDice(mod: playerInfo?.intMod ?? 0)
+            rollResult = diceService.rollDice(mod: playerInfo?.intMod ?? 0)
+            showDiceRollAnimation(finalResult: rollResult, modifer: playerInfo?.intMod ?? 0, checkType: .INT)
+            return rollResult
         case Constants.CheckTypes.VIG.rawValue:
-            return diceService.rollDice(mod: playerInfo?.vigMod ?? 0)
+            rollResult = diceService.rollDice(mod: playerInfo?.vigMod ?? 0)
+            showDiceRollAnimation(finalResult: rollResult, modifer: playerInfo?.vigMod ?? 0, checkType: .VIG)
+            return rollResult
         default:
-            return diceService.rollDice()
+            showDiceRollAnimation(finalResult: rollResult)
+            return rollResult
         }
+    }
+
+    func showDiceRollAnimation(finalResult: Int, modifer: Int? = nil, checkType: Constants.CheckTypes? = nil) {
+        self.showDiceRollAlert = true
+        diceRollAnimationViewModel = DiceRollAnimationViewModel(finalResult: finalResult, modifier: modifer, checkType: checkType) {
+            self.showDiceRollAlert = false
+        }
+        
     }
 }
